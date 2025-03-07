@@ -24,8 +24,8 @@ def do_a_sum(n):
         Returns:
             the addition of 1 up to the number n
     """
-    # print ("IN do_a_sum()") # Debug print
-    if n <= 0 and n >= 10: #
+    print ("IN do_a_sum()") # Debug print
+    if n <= 0 or n > 10:
         print ("Try again but with a number in [1, 10]")
         return -1
 
@@ -33,8 +33,8 @@ def do_a_sum(n):
     my_sum = 0
 
     # The loop that accummulates the addition
-    for x in range(n): #
-        my_sum = x #
+    for x in range(1, n + 1): #
+        my_sum = x + my_sum #
 
     return my_sum
 
@@ -45,18 +45,18 @@ def main():
     # NOTE: THIS FUNCTION CAUSES 1 RUNTIME ERROR!!! (on purpose)
 
     #First line... a comment
-    # print ("First line of executable code... IN main()") # Debug print
+    print ("First line of executable code... IN main()") # Debug print
     user_input = input("Give me one integer: ")
     if user_input.isdigit():
-        # print ("IN main()... if is digit") # Debug print
-        result = do_a_sum( user_input ) #
+        print ("IN main()... if is digit") # Debug print
+        result = do_a_sum(int(user_input))
         if result != -1:
             print( f"Sum from 1 to {user_input}: {result}")
         else:
             print("Picked a number outside [1,10]")
     else:
         print ("I said 'an integer'! ")
-    # print("Done") # Debug print
+    print("Done") # Debug print
 
 if "__main__" == __name__:
     main()
